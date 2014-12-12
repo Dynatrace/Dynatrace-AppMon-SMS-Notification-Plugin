@@ -24,11 +24,11 @@ The following outbound technologies are supported:
 | License | [dynaTrace BSD](dynaTraceBSD.txt)
 | Support | [Not Supported](https://community.compuwareapm.com/community/display/DL/Support+Levels)
 | Release History | 2011-03-10 Initial Release
-| Download | [dynaTrace SMS Notification Plugin 0.8.5](SMSNotification_0.8.5.jar)
+| Download | [dynaTrace SMS Notification Plugin 0.8.5](com.dynatrace.diagnostics.plugins.SMSNotification_0.8.5.jar)
 
 ## Installation
 
-Import the Plugin into the dynaTrace Server. For details how to do this please refer to the [Online Documentation on Plugin Management](SMS_Notification_Plugin.html).
+Import the Plugin into the dynaTrace Server. For details how to do this please refer to the [Online Documentation on Plugin Management](https://community.compuwareapm.com/community/display/DOCDT35/Plugin+Management).
 
 ## Configuration
 
