@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 3.2.1 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.diagnostics.plugins.SMSNotification" name="SMS Notification Plugin">
+    <information>
+      <license value="dynaTraceBSD.txt" />
+      <description value="The SMS Notification Plugin sends notifications via SMS." />
+    </information>
+    <configuration>
+      <property key="serviceProvider" label="Service Provider" type="list" description="The service provider to use for sending SMS notifications.&#xD;&#xA;Select 'Hardware Device' if a supported device is connected.&#xD;&#xA;Select an internet gateway if sending SMS using a service provider is prefered (account required)." default="Hardware Device">
+        <list>
+          <item value="Hardware Device" />
+          <item value="BulkSMS (Internet Gateway)" />
+          <item value="Clickatell (Internet Gateway)" />
+        </list>
+      </property>
+      <property key="hardwareModel" label="Hardware Model" type="list" description="The hardware device model." default="n/a">
+        <list>
+          <item value="n/a" />
+          <item value="BandLuxe (HSDPA C-120)" />
+          <item value="Billionton (PCMCIA PCGPRSQ-B)" />
+          <item value="D-Link (DWM-152)" />
+          <item value="EagleTec (GSM Modem)" />
+          <item value="Falcom (USA Samba 75 GSM/GPRS/EDGE Model MC75)" />
+          <item value="Fargo (Maestro 20)" />
+          <item value="GSM Module (SIM548C)" />
+          <item value="Huawei (E220)" />
+          <item value="Huawei (E230)" />
+          <item value="ITengo (3000)" />
+          <item value="ITengo (WM1080A)" />
+          <item value="Janus (GSM864Q)" />
+          <item value="Karbonn (K551)" />
+          <item value="Motorola (L6)" />
+          <item value="Motorola (V3)" />
+          <item value="Nokia (30 Terminal)" />
+          <item value="Nokia (3220)" />
+          <item value="Nokia (5140)" />
+          <item value="Nokia (5140i)" />
+          <item value="Nokia (6020)" />
+          <item value="Nokia (6070)" />
+          <item value="Nokia (6100)" />
+          <item value="Nokia (6103)" />
+          <item value="Nokia (6210)" />
+          <item value="Nokia (6230)" />
+          <item value="Nokia (6230i)" />
+          <item value="Nokia (6310)" />
+          <item value="Nokia (6310i)" />
+          <item value="Nokia (6610)" />
+          <item value="Nokia (6681)" />
+          <item value="Nokia (6800)" />
+          <item value="Nokia (6810)" />
+          <item value="Nokia (6822)" />
+          <item value="Nokia (7210)" />
+          <item value="Nokia (7250i)" />
+          <item value="Nokia (8250)" />
+          <item value="Nokia (8310)" />
+          <item value="Multitech (Multimodem GPRS)" />
+          <item value="Rogers (ZTE 636 USB 'Rocket' Modem)" />
+          <item value="Samba (55-SET GSM/GPRS USB Modem)" />
+          <item value="Samsung (D520)" />
+          <item value="Samsung (E1410 Guru)" />
+          <item value="Sharp (GX30)" />
+          <item value="Sharp (GX32)" />
+          <item value="Siemens (C45)" />
+          <item value="Siemens (MC35i)" />
+          <item value="Siemens (C65)" />
+          <item value="Siemens (M35)" />
+          <item value="Siemens (M50)" />
+          <item value="Siemens (M55)" />
+          <item value="Siemens (M65)" />
+          <item value="Siemens (TC35i)" />
+          <item value="Siemens (TC65t)" />
+          <item value="SIMCOM Ltd. (SIMCOM_SIM100S)" />
+          <item value="Sony Ericsson (F305)" />
+          <item value="Sony Ericsson (GC89)" />
+          <item value="Sony Ericsson (GT48)" />
+          <item value="Sony Ericsson (i320)" />
+          <item value="Sony Ericsson (K300i)" />
+          <item value="Sony Ericsson (K618i)" />
+          <item value="Sony Ericsson (K700i)" />
+          <item value="Sony Ericsson (K750i)" />
+          <item value="Sony Ericsson (K770)" />
+          <item value="Sony Ericsson (K790i)" />
+          <item value="Sony Ericsson (SE K800i)" />
+          <item value="Sony Ericsson (SE W850i)" />
+          <item value="Sony Ericsson (W580i)" />
+          <item value="Sony Ericsson (W800)" />
+          <item value="Sony Ericsson (W810)" />
+          <item value="Sony Ericsson (W880i)" />
+          <item value="Sony Ericsson (Z550a)" />
+          <item value="Ubinetics (GDC201)" />
+          <item value="Wavecom (M1206B)" />
+          <item value="Wavecom (M1306B)" />
+          <item value="Wavecom (WMOD2 Wismo)" />
+          <item value="Wavecom (Fastrack Supreme 10)" />
+          <item value="Wavecom (WISMOQCDMA CDMA)" />
+        </list>
+        <visibility>
+          <rule key="serviceProvider" value="Hardware Device" />
+        </visibility>
+      </property>
+      <property key="hardwarePort" label="Hardware Port" type="string" description="The hardware port.&#xD;&#xA;Example: 'COM1' (Windows),  '/dev/ttyUSB' (Unix)" default="COM1">
+        <visibility>
+          <rule key="serviceProvider" value="Hardware Device" />
+        </visibility>
+      </property>
+      <property key="hardwareBaudRate" label="Hardware Baud Rate" type="list" description="The hardware baud rate." default="n/a">
+        <list>
+          <item value="n/a" />
+          <item value="2400" />
+          <item value="4800" />
+          <item value="9600" />
+          <item value="19200" />
+          <item value="38400" />
+          <item value="57600" />
+          <item value="115200" />
+        </list>
+        <visibility>
+          <rule key="serviceProvider" value="Hardware Device" />
+        </visibility>
+      </property>
+      <property key="hardwareSimPin" label="Hardware SIM PIN" type="password" description="The hardware SIM card PIN." default="">
+        <visibility>
+          <rule key="serviceProvider" value="Hardware Device" />
+        </visibility>
+      </property>
+      <property key="internetGatewayAPI" label="Internet Gateway API" type="string" description="The API id used to connect to the Clickatell internet gateway." default="">
+        <visibility>
+          <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
+        </visibility>
+      </property>
+      <property key="internetGatewayUsername" label="Internet Gateway Username" type="string" description="The internet gateway user name." default="">
+        <visibility>
+          <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
+          <rule key="serviceProvider" value="BulkSMS (Internet Gateway)" />
+        </visibility>
+      </property>
+      <property key="internetGatewayPassword" label="Internet Gateway Password" type="password" description="The internet gateway password." default="">
+        <visibility>
+          <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
+          <rule key="serviceProvider" value="BulkSMS (Internet Gateway)" />
+        </visibility>
+      </property>
+      <property key="smsTo" label="To" type="string" description="The recipient's phone number." default="" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.action" id="com.dynatrace.diagnostics.plugins.SMSNotificationAction" name="SMS Notification Action">
+    <plugin configid="com.dynatrace.diagnostics.plugins.SMSNotification" class="com.dynatrace.smsnotification.SMSNotificationPlugin" />
+  </extension>
+</plugin>
+
