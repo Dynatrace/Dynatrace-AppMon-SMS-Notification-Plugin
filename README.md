@@ -15,4 +15,4 @@ The following outbound technologies are supported:
 
   * [BulkSMS](http://www.bulksms.com), Internet Gateway 
 
-Find further information in the [dynaTrace community](https://community.compuwareapm.com/community/display/DL/SMS+Notification+Plugin) 
+Find further information in the [dynaTrace community](https://community.dynatrace.com/community/display/DL/SMS+Notification+Plugin) 
