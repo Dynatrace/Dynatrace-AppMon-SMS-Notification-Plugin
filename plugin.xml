@@ -131,7 +131,7 @@
                     <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
                 </visibility>
             </property>
-            <property key="smsFrom" label="SMS From" type="string" description="The FROM in the SMS message. Alfanumeric 14 chars." default="Dynatrace">
+            <property key="smsFrom" label="SMS From" type="string" description="The FROM in the SMS message. Alfanumeric 11 chars, Numeric 14 chars." default="Dynatrace">
                 <visibility>
                     <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
                 </visibility>

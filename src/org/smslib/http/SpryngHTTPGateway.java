@@ -99,11 +99,13 @@ public class SpryngHTTPGateway extends HTTPGateway {
         // Default route= BUSINESS, this might be added later as parameter
         completeURL.append("&ROUTE=ECONOMY");
         // By default Spryng has LONG messages disallowed, to allow it set the below param to 1
-//        completeURL.append("&ALLOWLONG=0");
+        completeURL.append("&ALLOWLONG=0");
         completeURL.append("&DESTINATION=");
         completeURL.append(msg.getRecipient());
         completeURL.append("&BODY=");
-        completeURL.append(msg.getText());
+        String message=msg.getText();
+        //below length of String can be up to 612 when using ALLOWLONG=1
+        completeURL.append(message.substring(0, Math.min(message.length(), 160)));
         url = new URL(completeURL.toString());
         synchronized (this.SYNC_Commander) {
             response = HttpPost(url, request);
