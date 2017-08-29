@@ -27,7 +27,7 @@ public class InternetGatewaySMSConfiguration extends AbstractSMSNotificationPlug
         } // Clickatell
         else if (serviceProvider.contains("clickatell")) {
             gatewayServiceProvider = InternetSMSGatewayServiceProvider.Clickatell;
-        } // Clickatell
+        } // Spryng
         else if (serviceProvider.contains("spryng")) {
             gatewayServiceProvider = InternetSMSGatewayServiceProvider.Spryng;
         }

@@ -1,6 +1,7 @@
 // This file is to be used in conjunction with smslib.org library version 3.4.6 or compatible
 //
 // Software is licensed with the MIT-license, allowing you to use/change the code as you see fit
+// created by sbakker www.ictcore.biz
 //
 /////////////////////
 // Copyright (c) 2017 IctCoreBiz
@@ -97,10 +98,10 @@ public class SpryngHTTPGateway extends HTTPGateway {
         completeURL.append("&SERVICE=Dynatrace");
         completeURL.append("&SENDER=");
         completeURL.append(this.getFrom());
-        // Default route= BUSINESS, this might be added later as parameter
         completeURL.append("&ROUTE=");
         completeURL.append(this.route);
         // By default Spryng has LONG messages disallowed, to allow it set the below param to 1
+        // then also change the below max size of the message
         completeURL.append("&ALLOWLONG=0");
         completeURL.append("&DESTINATION=");
         completeURL.append(msg.getRecipient());
@@ -120,7 +121,6 @@ public class SpryngHTTPGateway extends HTTPGateway {
             ok = true;
         } else {
             getService().getLogger().logError("Error sending message. Response: " + response.get(0), null, getGatewayId());
-//            System.out.println(">>>>>> Error sending message. Response: " + response.get(0));
             switch (Integer.parseInt(response.get(0))) {
                 case 100:
                 case 101:
