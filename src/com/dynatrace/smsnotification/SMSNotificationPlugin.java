@@ -257,7 +257,7 @@ public class SMSNotificationPlugin implements Action {
 					smsGateway.setOutbound(true);
 					break;
 				case Spryng:
-					smsGateway = new SpryngHTTPGateway(smsConfiguration.getGatewayID(), smsConfiguration.getInternetGatewayUserName(), smsConfiguration.getInternetGatewayPassword());
+					smsGateway = new SpryngHTTPGateway(smsConfiguration.getGatewayID(), smsConfiguration.getInternetGatewayUserName(), smsConfiguration.getInternetGatewayPassword(), smsConfiguration.getInternetGatewayRoute());
 					smsGateway.setOutbound(true);
                                         smsGateway.setFrom(smsConfiguration.getSMSFrom());
                                         //System.err.println("SPRYNG Gekozen");

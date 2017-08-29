@@ -136,6 +136,15 @@
                     <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
                 </visibility>
             </property>
+            <property key="internetGatewayRoute" label="Internet Gateway Route" type="list" description="Predefined Spryng Routes" default="BUSINESS">
+                <list>
+                    <item value="BUSINESS" />
+                    <item value="ECONOMY" />
+                </list>
+                <visibility>
+                    <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
+                </visibility>
+            </property>
             <property key="internetGatewayUsername" label="Internet Gateway Username" type="string" description="The internet gateway user name." default="">
                 <visibility>
                     <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />

@@ -47,12 +47,13 @@ public class SpryngHTTPGateway extends HTTPGateway {
 
     final String providerUrl = "https://www.spryng.nl";
 
-    String username, password;
+    String username, password, route;
 
-    public SpryngHTTPGateway(String id, String myUsername, String myPassword) {
+    public SpryngHTTPGateway(String id, String myUsername, String myPassword, String myRoute) {
         super(id);
         this.username = myUsername;
         this.password = myPassword;
+        this.route = myRoute;
         this.SYNC_Commander = new Object();
         setAttributes(77);
     }
@@ -97,13 +98,14 @@ public class SpryngHTTPGateway extends HTTPGateway {
         completeURL.append("&SENDER=");
         completeURL.append(this.getFrom());
         // Default route= BUSINESS, this might be added later as parameter
-        completeURL.append("&ROUTE=ECONOMY");
+        completeURL.append("&ROUTE=");
+        completeURL.append(this.route);
         // By default Spryng has LONG messages disallowed, to allow it set the below param to 1
         completeURL.append("&ALLOWLONG=0");
         completeURL.append("&DESTINATION=");
         completeURL.append(msg.getRecipient());
         completeURL.append("&BODY=");
-        String message=msg.getText();
+        String message = msg.getText();
         //below length of String can be up to 612 when using ALLOWLONG=1
         completeURL.append(message.substring(0, Math.min(message.length(), 160)));
         url = new URL(completeURL.toString());

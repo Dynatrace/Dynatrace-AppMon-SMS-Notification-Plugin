@@ -81,6 +81,11 @@ public class InternetGatewaySMSConfiguration extends AbstractSMSNotificationPlug
     }
 
     @Override
+    public String getInternetGatewayRoute() {
+        return super.getInternetGatewayRoute();
+    }
+
+    @Override
     public String getInternetGatewayUserName() {
         return super.getInternetGatewayUserName();
     }

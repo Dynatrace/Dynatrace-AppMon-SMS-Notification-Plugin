@@ -11,6 +11,7 @@ public abstract class AbstractSMSNotificationPluginConfiguration {
     private static String PROPERTY_HARDWARE_BAUD_RATE = "hardwareBaudRate";
     private static String PROPERTY_HARDWARE_SIM_PIN = "hardwareSimPin";
     private static String PROPERTY_INTERNET_GATEWAY_API = "internetGatewayAPI";
+    private static String PROPERTY_INTERNET_GATEWAY_ROUTE = "internetGatewayRoute";
     private static String PROPERTY_INTERNET_GATEWAY_USERNAME = "internetGatewayUsername";
     private static String PROPERTY_INTERNET_GATEWAY_PASSWORD = "internetGatewayPassword";
     private static String PROPERTY_SMS_FROM = "smsFrom";
@@ -23,6 +24,7 @@ public abstract class AbstractSMSNotificationPluginConfiguration {
     private String mHardwareBaudRate;
     private String mHardwareSIMPIN;
     private String mInternetGatewayAPI;
+    private String mInternetGatewayRoute;
     private String mInternetGatewayUserName;
     private String mInternetGatewayPassword;
     private String mSmsFrom;
@@ -36,6 +38,7 @@ public abstract class AbstractSMSNotificationPluginConfiguration {
         mHardwareBaudRate = pEnvironment.getConfigString(PROPERTY_HARDWARE_BAUD_RATE);
         mHardwareSIMPIN = pEnvironment.getConfigPassword(PROPERTY_HARDWARE_SIM_PIN);
         mInternetGatewayAPI = pEnvironment.getConfigString(PROPERTY_INTERNET_GATEWAY_API);
+        mInternetGatewayRoute = pEnvironment.getConfigString(PROPERTY_INTERNET_GATEWAY_ROUTE);
         mInternetGatewayUserName = pEnvironment.getConfigString(PROPERTY_INTERNET_GATEWAY_USERNAME);
         mInternetGatewayPassword = pEnvironment.getConfigPassword(PROPERTY_INTERNET_GATEWAY_PASSWORD);
         mSmsFrom = pEnvironment.getConfigString(PROPERTY_SMS_FROM);
@@ -81,6 +84,10 @@ public abstract class AbstractSMSNotificationPluginConfiguration {
 
     String getInternetGatewayAPI() {
         return mInternetGatewayAPI;
+    }
+
+    String getInternetGatewayRoute() {
+        return mInternetGatewayRoute;
     }
 
     String getInternetGatewayUserName() {
