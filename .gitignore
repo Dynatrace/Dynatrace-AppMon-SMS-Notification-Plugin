@@ -50,9 +50,6 @@ nbproject/
 .project
 build/
 
-#Copyrighted files
-res/
-
 # Specific pluginbuilder files
 .classpath
 build.properties
