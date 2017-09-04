@@ -9,7 +9,7 @@ The dynaTrace SMS Notification Plugin enables dynaTrace to send notifications, s
 
 The following outbound technologies are supported:
 
-  * Hardware Devices (USB, Serial Port, Bluetooth. See L[ist of Known Compatible Devices](http://smslib.org/doc/compatibility/)) 
+  * Hardware Devices (USB, Serial Port, Bluetooth. See [List of Known Compatible Devices](http://smslib.org/doc/compatibility/)) 
 
   * [Clickatell](http://www.clickatell.com), Internet Gatway 
 
