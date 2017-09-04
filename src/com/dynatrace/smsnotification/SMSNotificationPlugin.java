@@ -38,6 +38,7 @@ import org.smslib.TimeoutException;
 import org.smslib.http.BulkSmsHTTPGateway;
 import org.smslib.http.ClickatellHTTPGateway;
 import org.smslib.http.SpryngHTTPGateway;
+import org.smslib.http.TGGHTTPGateway;
 import org.smslib.modem.SerialModemGateway;
 
 import com.dynatrace.diagnostics.pdk.Action;
@@ -260,6 +261,10 @@ public class SMSNotificationPlugin implements Action {
 					smsGateway = new SpryngHTTPGateway(smsConfiguration.getGatewayID(), smsConfiguration.getInternetGatewayUserName(), smsConfiguration.getInternetGatewayPassword(), smsConfiguration.getInternetGatewayRoute());
 					smsGateway.setOutbound(true);
                                         smsGateway.setFrom(smsConfiguration.getSMSFrom());
+					break;
+				case TGG:
+					smsGateway = new TGGHTTPGateway(smsConfiguration.getGatewayID(), smsConfiguration.getInternetGatewayAPI());
+					smsGateway.setOutbound(true);
 					break;
 				}
 			}

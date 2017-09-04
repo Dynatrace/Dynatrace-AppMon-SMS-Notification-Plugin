@@ -13,7 +13,8 @@
                     <item value="Hardware Device" />
                     <item value="BulkSMS (Internet Gateway)" />
                     <item value="Clickatell (Internet Gateway)" />
-                    <item value="Spryng (Internet Gateway)" />
+                    <item value="Spryng.nl (Internet Gateway)" />
+                    <item value="TGG.nl (Internet Gateway)" />
                 </list>
             </property>
             <property key="hardwareModel" label="Hardware Model" type="list" description="The hardware device model." default="n/a">
@@ -126,37 +127,38 @@
                     <rule key="serviceProvider" value="Hardware Device" />
                 </visibility>
             </property>
-            <property key="internetGatewayAPI" label="Internet Gateway API" type="string" description="The API id used to connect to the Clickatell internet gateway." default="">
+            <property key="internetGatewayAPI" label="Internet Gateway API" type="string" description="The API id used to connect to the internet gateway." default="">
                 <visibility>
                     <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
+                    <rule key="serviceProvider" value="TGG.nl (Internet Gateway)" />
                 </visibility>
             </property>
             <property key="smsFrom" label="SMS From" type="string" description="The FROM in the SMS message. Alfanumeric 11 chars, Numeric 14 chars." default="Dynatrace">
                 <visibility>
-                    <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
+                    <rule key="serviceProvider" value="Spryng.nl (Internet Gateway)" />
                 </visibility>
             </property>
-            <property key="internetGatewayRoute" label="Internet Gateway Route" type="list" description="Predefined Spryng Routes" default="BUSINESS">
+            <property key="internetGatewayRoute" label="Internet Gateway Route" type="list" description="Predefined Spryng.nl Routes" default="BUSINESS">
                 <list>
                     <item value="BUSINESS" />
                     <item value="ECONOMY" />
                 </list>
                 <visibility>
-                    <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
+                    <rule key="serviceProvider" value="Spryng.nl (Internet Gateway)" />
                 </visibility>
             </property>
             <property key="internetGatewayUsername" label="Internet Gateway Username" type="string" description="The internet gateway user name." default="">
                 <visibility>
                     <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
                     <rule key="serviceProvider" value="BulkSMS (Internet Gateway)" />
-                    <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
+                    <rule key="serviceProvider" value="Spryng.nl (Internet Gateway)" />
                 </visibility>
             </property>
             <property key="internetGatewayPassword" label="Internet Gateway Password" type="password" description="The internet gateway password." default="">
                 <visibility>
                     <rule key="serviceProvider" value="Clickatell (Internet Gateway)" />
                     <rule key="serviceProvider" value="BulkSMS (Internet Gateway)" />
-                    <rule key="serviceProvider" value="Spryng (Internet Gateway)" />
+                    <rule key="serviceProvider" value="Spryng.nl (Internet Gateway)" />
                 </visibility>
             </property>
             <property key="smsTo" label="To" type="string" description="The recipient's phone number." default="" />

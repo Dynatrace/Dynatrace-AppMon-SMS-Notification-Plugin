@@ -10,7 +10,8 @@ public class InternetGatewaySMSConfiguration extends AbstractSMSNotificationPlug
     public enum InternetSMSGatewayServiceProvider {
         BulkSMS,
         Clickatell,
-        Spryng
+        Spryng,
+        TGG
     }
 
     InternetSMSGatewayServiceProvider gatewayServiceProvider;
@@ -30,19 +31,25 @@ public class InternetGatewaySMSConfiguration extends AbstractSMSNotificationPlug
         } // Spryng
         else if (serviceProvider.contains("spryng")) {
             gatewayServiceProvider = InternetSMSGatewayServiceProvider.Spryng;
+        } else if (serviceProvider.contains("tgg")) {
+            gatewayServiceProvider = InternetSMSGatewayServiceProvider.TGG;
         }
     }
 
     @Override
     void validateConfiguration() throws SMSNotificationPluginConfigurationException {
-        // Internet gateway user name
-        if ((getInternetGatewayUserName() == null) || getInternetGatewayUserName().isEmpty()) {
-            throw new SMSNotificationPluginConfigurationException("No value for internet gateway user name specified");
+        // Internet gateway user name (No check required for TGG)
+        if ((gatewayServiceProvider != null) && !(gatewayServiceProvider.equals(InternetSMSGatewayServiceProvider.TGG))) {
+            if ((getInternetGatewayUserName() == null) || getInternetGatewayUserName().isEmpty()) {
+                throw new SMSNotificationPluginConfigurationException("No value for internet gateway user name specified");
+            }
         }
 
-        // Internet gateway password
-        if ((getInternetGatewayPassword() == null) || getInternetGatewayPassword().isEmpty()) {
-            throw new SMSNotificationPluginConfigurationException("No value for internet gateway password specified");
+        // Internet gateway password (No check required for TGG)
+        if ((gatewayServiceProvider != null) && !(gatewayServiceProvider.equals(InternetSMSGatewayServiceProvider.TGG))) {
+            if ((getInternetGatewayPassword() == null) || getInternetGatewayPassword().isEmpty()) {
+                throw new SMSNotificationPluginConfigurationException("No value for internet gateway password specified");
+            }
         }
 
         // Internet gateway API (Clickatell only)
@@ -120,6 +127,8 @@ public class InternetGatewaySMSConfiguration extends AbstractSMSNotificationPlug
                 }
                 return pMessageText;
             case Clickatell:
+                return pMessageText; // Not transformation required
+            case TGG:
                 return pMessageText; // Not transformation required
             case Spryng:
                 // Apply URL encoding
