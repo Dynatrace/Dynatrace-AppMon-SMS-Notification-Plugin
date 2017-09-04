@@ -76,7 +76,6 @@ public class TGGHTTPGateway extends HTTPGateway {
     @Override
     public boolean sendMessage(OutboundMessage msg) throws TimeoutException, GatewayException, IOException, InterruptedException {
         URL url = null;
-//        List<HttpHeader> request = new ArrayList<HttpHeader>();
         List<String> response;
         boolean ok = false;
         String messagetxt = msg.getText();
@@ -87,7 +86,7 @@ public class TGGHTTPGateway extends HTTPGateway {
         payload.append("\"Messages\": [{\n");
         payload.append("  \"Title\":\"Dynatrace SMS Notification Plugin\",\n");
         payload.append("  \"Body\":\"");
-        payload.append(messagetxt);
+        payload.append(smsmessage);
         payload.append("\",\n");
         payload.append("  \"Recipients\": [{\n");
         payload.append("    \"PhoneNumber\": \"");
