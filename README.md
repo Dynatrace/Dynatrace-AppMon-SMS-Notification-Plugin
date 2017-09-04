@@ -15,4 +15,8 @@ The following outbound technologies are supported:
 
   * [BulkSMS](http://www.bulksms.com), Internet Gateway 
 
+  * [Spryng.nl](http://www.spryng.nl), Internet Gateway 
+
+  * [TGG.nl](http://www.tgg.nl), Internet Gateway (REST API)
+
 Find further information in the [dynaTrace community](https://community.dynatrace.com/community/display/DL/SMS+Notification+Plugin) 
