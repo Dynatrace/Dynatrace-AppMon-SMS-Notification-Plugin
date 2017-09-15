@@ -9,10 +9,14 @@ The dynaTrace SMS Notification Plugin enables dynaTrace to send notifications, s
 
 The following outbound technologies are supported:
 
-  * Hardware Devices (USB, Serial Port, Bluetooth. See L[ist of Known Compatible Devices](http://smslib.org/doc/compatibility/)) 
+  * Hardware Devices (USB, Serial Port, Bluetooth. See [List of Known Compatible Devices](http://smslib.org/doc/compatibility/)) 
 
   * [Clickatell](http://www.clickatell.com), Internet Gatway 
 
   * [BulkSMS](http://www.bulksms.com), Internet Gateway 
+
+  * [Spryng.nl](http://www.spryng.nl), Internet Gateway 
+
+  * [TGG.nl](http://www.tgg.nl), Internet Gateway (REST API)
 
 Find further information in the [dynaTrace community](https://community.dynatrace.com/community/display/DL/SMS+Notification+Plugin) 
